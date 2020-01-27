@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(66, 195, 255)
+}
+
+.App {
+    //width: 800px;
+    min-width: 320;
+    max-width: 1200px;
+    border: solid 10px rgb(94, 164, 255);
+    padding: 20px;
+    margin: 25px auto;
+
+   background-color: rgb(226, 231, 255);
+}
+
+@media screen and (min-width: 600px) {
+    body {
+        background-color: rgb(234, 241, 255);
+
+    }
+}
+
+@media screen and (min-width: 800px) {
+    body {
+        background-color: rgb(54, 74, 173);
+    }
+
+}

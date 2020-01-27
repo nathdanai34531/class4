@@ -1,0 +1,85 @@
+.Nav { 
+    background: rgb(0, 110, 255); 
+    padding: 20px; 
+
+
+    .hamburger {
+    display: block;
+   
+
+    width: 30px;
+    height: 30px;
+
+position: absolute;
+right: 50px;
+top: 68px;
+color: white;
+
+svg{
+    width: 100%;
+    height: auto;
+}
+
+&:hover {
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+    }
+    
+
+
+
+    .links {
+        background-color: rgb(0, 110, 255);
+        text-align: center;
+        
+
+        a {  
+            background-color: rgb(79, 155, 255);
+            color: rgb(0, 0, 0);
+
+            display: block;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 10px;
+
+            text-decoration: none;
+            text-transform: uppercase;
+
+            border: solid 5px rgb(136, 184, 255);
+
+            transition: all 1s;
+
+            &:hover {
+                transition: all .5s;
+                background-color: rgb(212, 243, 255);
+            }
+
+
+
+        }
+    }
+
+}
+
+@media screen and(min-width: 600px) {
+.Nav{ 
+    .hamburger {
+        display: none;
+    }
+
+    .links {
+           a { 
+               display: inline-block;
+            }
+        }
+    }
+}
+
+
+@media screen and(min-width: 800px) {
+ 
+    }
+    
+
