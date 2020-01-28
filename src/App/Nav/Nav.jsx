@@ -30,29 +30,26 @@ const Nav = () => {
 
     //Checking for Small view or Medium/Large
     const handleIsSmall = () => {
-        console.log('How Wide Window: ', window.innerWidth, isSmall);
+        console.log('isSmall', isSmall);
 
-        let newValue;
+
 
         if (window.innerWidth > 599) {
-            console.log('greater than')
-            newValue = false;
+            updateIsSmall(false);
+            updateShowMenu(true);
 
         } else {
-            console.log('less than')
-            newValue = true;
-
+            updateIsSmall(true);
+            updateShowMenu(false);
         }
-        console.log('newValue', newValue)
-        updateIsSmall(newValue);
-
     }
 
 
-    //useEffect
+    //useEffect say only do this when
     useEffect(() => {
 
         window.addEventListener('resize', handleIsSmall)
+        handleIsSmall(); //fire when page first loads.
 
     }, []);
 
@@ -61,13 +58,14 @@ const Nav = () => {
     return (
         <nav className='Nav'>
 
-            <button onClick={handleIsSmall}>Small me</button>
 
-            <div className="hamburger" onClick={handhamclick}>
-                <FontAwesomeIcon icon={faBars} />
+            {
+                isSmall &&
+                <div className="hamburger" onClick={handhamclick}>
+                    <FontAwesomeIcon icon={faBars} />
 
-            </div>
-
+                </div>
+            }
             {
                 showMenu &&
                 <div className="links">
