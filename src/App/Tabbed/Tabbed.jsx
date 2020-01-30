@@ -31,7 +31,11 @@ const tabItems = [
 
 const Tabbed = () => {
     //stage managed
-    const [currentTab, setCurrentTab] = useState(tabItems[1]);
+    const [currentTab, setCurrentTab] = useState(tabItems[0]);
+
+    const isAbout = (currentTab.title === 'About' ) ? 'tab active' : 'tab';
+    const isMission = ( currentTab.title === 'Mission' ) ? 'tab active' : 'tab';
+    const isVision = ( currentTab.title === 'Vision' ) ? 'tab active' : 'tab';
 
 
     return (
@@ -40,9 +44,9 @@ const Tabbed = () => {
             <div className="tabs">
 
 
-                <div onClick={ () => { setCurrentTab(tabItems[0]) } } className="tab">About</div>
-                <div onClick={ () => { setCurrentTab(tabItems[1]) } }className="tab">Mission</div>
-                <div onClick={ () => { setCurrentTab(tabItems[2]) } }className="tab">Vision</div>
+                <div onClick={() => { setCurrentTab(tabItems[0]) }} className={isAbout}>About</div>
+                <div onClick={() => { setCurrentTab(tabItems[1]) }} className={isMission}>Mission</div>
+                <div onClick={() => { setCurrentTab(tabItems[2]) }} className={isVision}>Vision</div>
             </div>
 
             <div className="content">

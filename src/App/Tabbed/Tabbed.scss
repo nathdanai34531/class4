@@ -2,17 +2,21 @@
     .tabs{
         display: flex;
         .tab {
-            background-color: seagreen;
+            background-color: rgb(0, 65, 65);
         padding: 10px 20px;
      border-radius: 5px 5px 0px 0px;
        margin-right: 10px;
+
+       &.active {
+           background-color: teal;
+       }
         
     }
 }
 
 
 .content{
-    background-color: seagreen;
+    background-color: teal;
     padding: 20px;
     img{}
     h2{}
