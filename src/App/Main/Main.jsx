@@ -1,18 +1,32 @@
 import React from 'react';
 import './Main.scss';
-import Tabbed from '../Tabbed/Tabbed.jsx';
+import { Switch, Route } from 'react-router-dom';
+
+import Welcome from '../Pages/Welcome';
+import Contact from '../Pages/Contact';
+import Services from '../Pages/Services';
+
+
 const Main = () => {
     return (
         <main className='Main'>
 
-            <Tabbed />
-            
-            <div className="columns">
-                 <div className="col col1">Col1 </div>
-                 <div className="col col2">Col2 </div>
-                 <div className="col col3">Col3 </div>
-                 <div className="col col4">Col4 </div>
-            </div>
+            <Switch>
+                <Route path='/services'>
+                    <Services />
+                </Route>
+
+                <Route path='/contact'>
+                    <Contact />
+                </Route>
+
+                <Route path='/'>
+                    <Welcome />
+                </Route>
+
+
+            </Switch>
+
 
         </main>
 

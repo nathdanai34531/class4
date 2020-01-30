@@ -56,6 +56,10 @@ svg{
                 background-color: rgb(212, 243, 255);
             }
 
+            &.active{
+                background-color: red;
+            }
+
 
 
         }

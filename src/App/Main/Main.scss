@@ -4,49 +4,5 @@
     padding: 20px; 
 
     min-width: 300px;
-
-.columns {
-    background-color: #f4a460;
-    padding: 10px;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    
-    
-    .col {
-        padding: 10px;
-        color: white;
-
-        width: 100%
-    }
-        .col1 {background-color: teal;}
-        .col2 {background-color: rgb(0, 173, 173);}
-        .col3 {background-color: rgb(0, 41, 128);}
-        .col4 {background-color: rgb(0, 110, 255);}
-    }
 }
 
-
-//medium screen
-@media screen and (min-width: 600px) {
-    .Main {
-        .columns {
-            .col {
-                width: 45%
-            }
-        }
-    }
-}
-
-
-//large screen
-@media screen and (min-width: 800px) {
-    .Main {
-        .columns {
-            .col {
-                width: 20%
-            }
-        }
-    }
- }
