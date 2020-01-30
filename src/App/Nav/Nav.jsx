@@ -6,78 +6,58 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Nav = () => {
 
-    //State
-    const [showMenu, updateShowMenu] = useState(true);
-    const [isSmall, updateIsSmall] = useState(true);
+    const [showMenu, updateShowMenu] = useState(false);
 
+    const handleHamClick = () => {
+        console.log('Ham click');
 
-    //Function /Methods
-    //Hamburger Click
-    const handhamclick = () => {
-        console.log('Youhitham');
-
-        let newShowMenu;
-
-        if (showMenu === true) {
-            newShowMenu = false;
+        if (showMenu === false) {
+            updateShowMenu(true);
         } else {
-            newShowMenu = true;
+            updateShowMenu(false);
         }
 
-
-        updateShowMenu(newShowMenu);
     }
 
-    //Checking for Small view or Medium/Large
-    const handleIsSmall = () => {
-        console.log('isSmall', isSmall);
 
-
-
+    const handleWindowResize = () => {
         if (window.innerWidth > 599) {
-            updateIsSmall(false);
             updateShowMenu(true);
-
         } else {
-            updateIsSmall(true);
             updateShowMenu(false);
         }
     }
 
 
-    //useEffect say only do this when
+
     useEffect(() => {
-
-        window.addEventListener('resize', handleIsSmall)
-        handleIsSmall(); //fire when page first loads.
-
+        window.addEventListener('resize', handleWindowResize);
+        handleWindowResize();
     }, []);
 
 
 
-    return (
-        <nav className='Nav'>
+
+return (
+    <nav className='Nav'>
 
 
-            {
-                isSmall &&
-                <div className="hamburger" onClick={handhamclick}>
-                    <FontAwesomeIcon icon={faBars} />
+        <div className="hamburger" onClick={handleHamClick}>
+            <FontAwesomeIcon icon={faBars} />
 
-                </div>
-            }
-            {
-                showMenu &&
-                <div className="links">
-                    <a href="#">Welcome</a>
-                    <a href="#">Services</a>
-                    <a href="#">Contact</a>
-                </div>
+        </div>
 
-            }
+        {
+            showMenu &&
+            <div className="links">
+                <a href="#">Welcome</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </div>
+        }
+    </nav>
 
-        </nav>
-    )
+)
 
 
 };
