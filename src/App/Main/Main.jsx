@@ -2,9 +2,9 @@ import React from 'react';
 import './Main.scss';
 import { Switch, Route } from 'react-router-dom';
 
-import Welcome from '../Pages/Welcome';
-import Contact from '../Pages/Contact';
-import Services from '../Pages/Services';
+import Welcome from '../Pages/Welcome/Welcome.jsx';
+import Contact from '../Pages/Contact.jsx';
+import Services from '../Pages/Services/Services.jsx';
 
 
 const Main = () => {
