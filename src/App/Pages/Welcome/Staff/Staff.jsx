@@ -1,8 +1,9 @@
 import React from 'react';
 import './Staff.scss';
-import { staffMembers} from './staff.js';
+import { staffMembers } from './staff.js';
 
 const StaffMembers = () => {
+    console.log('staffMembers', staffMembers);
     return staffMembers.map((staffMember, idx) => {
         return (
 
@@ -20,10 +21,13 @@ const Staff = () => {
     return (
         <div className='Staff'>
 
-            Staff goes here
-            <StaffMembers />
+            <h2>Our Staffs</h2>
 
+            <div className='container'>
 
+                <StaffMembers />
+
+            </div>
 
         </div>
     )

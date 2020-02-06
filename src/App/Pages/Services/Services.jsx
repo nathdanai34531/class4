@@ -1,6 +1,6 @@
 import React from 'react';
 import './Services.scss';
-import { servicesTitles }  from './services.js';
+import { servicesTitles } from './services.js';
 
 const ServicesTitle = () => {
     return servicesTitles.map((servicesTitle, idx) => {
@@ -18,11 +18,13 @@ const ServicesTitle = () => {
 
 const Services = () => {
     return (
-        <div className='Services'>
+        <div className={' Pages Services'}>
 
-            Services goes here
-            <ServicesTitle />
+            <h2>Services goes here</h2>
 
+            <div className='container'>
+                <ServicesTitle />
+            </div>
 
 
         </div>
