@@ -1,60 +1,44 @@
 import React, { useState, useEffect } from 'react';
+import '../Pages.scss';
 import './Services.scss';
-// import { servicesTitles } from './services.js';
+// import { timbuktuArray } from './servicesArray.js';
 import API from '../../common/API.js';
 
+const ServicesList = () => {
 
+    // 1. Set Up State to keep track of data from server
+    const [timbuktuArray, setTimbuktuArray] = useState([ ]);
 
-const ServicesTitles = () => {
-
-
-    //1. Set up state to keep track of data from server
-    const [servicesTitles, setServicesTitles] = useState([]);
-
-    //Only do this once
+    // Only do this on mount.
     useEffect(() => {
-        //2. Retrieve data from the server
-        API.get('services').then((result) => {
-
-
-            //3. Update staff members with data from server
-            console.log('Services Response', result);
-            setServicesTitles(result.data);
+        // 2. Retrieve the data from the server
+        API.get('services/gallery').then((result) => {
+            // 3. Update timbuktuArray with data from server
+            console.log('Services Server Response', result);
+            setTimbuktuArray(result.data);
         });
-    }, []);
+    }, [ ]);
 
 
-     
-   
-
-
-
-    return servicesTitles.map((servicesTitle, idx) => {
+    return timbuktuArray.map((singleService, idx) => {
         return (
-
-            <div key={idx} className={'ServicesTitle'}>
-                <img src={servicesTitles.img} alt={ServicesTitles.name} />
-                <h3>{servicesTitle.name}</h3>
+            <div className='Service'>
+                <img src={ singleService.image } alt={ singleService.title } />
+                <h3>{ singleService.title }</h3>
             </div>
         );
     });
 }
 
-
-
 const Services = () => {
     return (
-        <div className={' Pages Services'}>
-
-            <h2>Services goes here</h2>
-
-            <div className='container'>
-                <ServicesTitles />
+        <div className={ 'Pages Services' }>
+            <h2>Services</h2>
+            <div className="container">
+                <ServicesList />
             </div>
-
-
         </div>
-    )
+    );
 }
 
 export default Services;
