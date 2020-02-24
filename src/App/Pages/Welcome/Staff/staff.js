@@ -4,7 +4,7 @@ export const staffMembers = [
     { name: 'Laura' , img: '/img/Staff/staff-3.jpeg' },
     { name: 'Jan'   , img: '/img/Staff/staff-4.jpeg' },
     { name: 'Susan' , img: '/img/Staff/staff-5.jpeg' },
-    { name: 'Claire', img: '/img/Staff/staff-6.jpeg'  },
+    { name: 'Claire', img: '/img/Staff/staff-6.jpeg' },
     { name: 'Steph' , img: '/img/Staff/staff-7.jpeg' },
     { name: 'Tracy' , img: '/img/Staff/staff-8.jpeg' },
 ];
