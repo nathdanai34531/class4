@@ -20,4 +20,17 @@
           margin: 0px;
       }
   }
+
+
+  button{
+      width: 200px;
+      background-color: teal;
+      line-height: 30px;
+      color: white;
+      font-size: 16px;
+
+      &.active {
+          background-color: orange;
+      }
+  }
 }

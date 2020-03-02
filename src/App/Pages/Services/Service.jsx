@@ -24,12 +24,12 @@ const Service = (props) => {
                 alt={props.singleService.title}
 
             />
-            <h3>{props.singleService.title}</h3>
+            <h3>{props.singleService.title}: Category: {props.singleService.category}</h3>
             <Lightbox
                 show={showLightBox}
                 turnLightOff={turnLightOff}
-                imageURL={props.singleService. image}
-                imageALT={props.singleService. title}
+                imageURL={props.singleService.image}
+                imageALT={props.singleService.title}
 
             />
         </div>

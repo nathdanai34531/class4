@@ -5,47 +5,38 @@ import './Services.scss';
 // import { timbuktuArray } from './servicesArray.js';
 import API from '../../common/API.js';
 
-import Service from './Service.jsx';
-
-const ServicesList = (props) => {
-
-
-    const turnLightOn = () => {
-        console.log('Turning ON');
-    }
-
-    const turnLightOff = () => {
-        console.log('Turning OFF');
-    }
+import ServicesList from './ServicesList.jsx';
+import Categories from './Categories.jsx';
 
 
-    // 1. Set Up State to keep track of data from server
+const Services = () => {
+
     const [timbuktuArray, setTimbuktuArray] = useState([]);
+    const [categories, setCategories] = useState([]);
+    const [currCat, setCurrCat] = useState('All');
 
-    // Only do this on mount.
     useEffect(() => {
-        // 2. Retrieve the data from the server
         API.get('services/gallery').then((result) => {
-            // 3. Update timbuktuArray with data from server
             console.log('Services Server Response', result);
             setTimbuktuArray(result.data);
         });
+
+        API.get('services/categories').then((result) => {
+            console.log('Categories Server Response', result);
+            setCategories(result.data);
+        });
     }, []);
 
-
-    return timbuktuArray.map((singleService, idx) => {
-        return (
-            <Service key={ idx } singleService={singleService} />
-        );
-    });
-}
-
-const Services = () => {
     return (
         <div className={'Pages Services'}>
             <h2>Services</h2>
+            <Categories
+                categories={categories}
+                currCat={currCat}
+                setCurrCat={setCurrCat}
+            />
             <div className="container">
-                <ServicesList />
+                <ServicesList timbuktuArray={timbuktuArray} currCat={currCat} />
             </div>
         </div>
     );
